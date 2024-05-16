@@ -40,7 +40,7 @@ router.post(
       gender: req.body.gender,
       email: req.body.email,
       contactNumber: req.body.contactNumber,
-      username: req.body.username,
+      userName: req.body.userName,
       password: hashPassword,
       address: req.body.address,
       certificate: req.body.certificate,
@@ -54,7 +54,7 @@ router.post(
       // generating token
       jwt.sign(
         {
-          studentId: studentNewAdded.studentId,
+          // studentId: studentNewAdded.studentId,
           firstName: studentNewAdded.firstName,
         },
         process.env.SECRETKEY,
@@ -97,7 +97,7 @@ router.get("/api/students/", auth, async (req, res) => {
           gender: { $first: "$gender" },
           email: { $first: "$email" },
           contactNumber: { $first: "$contactNumber" },
-          username: { $first: "$username" },
+          userName: { $first: "$userName" },
           password: { $first: "$password" },
           address: { $first: "$address" },
           certificate: { $first: "$certificate" },
@@ -139,7 +139,7 @@ router.get("/api/student/:studentid", auth, async (req, res) => {
           gender: { $first: "$gender" },
           email: { $first: "$email" },
           contactNumber: { $first: "$contactNumber" },
-          username: { $first: "$username" },
+          userName: { $first: "$userName" },
           password: { $first: "$password" },
           address: { $first: "$address" },
           certificate: { $first: "$certificate" },
@@ -172,8 +172,8 @@ router.delete("/api/removeallstudents/", auth, async (req, res) => {
 
 router.post("/api/student/token", async (req, res) => {
   try {
-    //get student using username
-    const student = await studentModel.findOne({ username: req.body.username });
+    //get student using userName
+    const student = await studentModel.findOne({ userName: req.body.userName });
     //if no student found- return error
     if (!student) {
       return res.status(401).send("invalid student, please try again");
