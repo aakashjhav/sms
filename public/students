@@ -1,0 +1,56 @@
+
+
+{
+  "studentId": "123456789",
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "1995-05-15",
+  "gender": "male",
+  "email": "john.doe@example.com",
+  "contactNumber": "+1234567890",
+  "username": "johndoe123",
+  "password": "password123",
+  "address": "123 Main St, Cityville",
+  "certificate": "Bachelor's Degree in Computer Science",
+  "pointsEarned": 500,
+  "courseCart": [
+    "CS101",
+    "MATH200"
+  ],
+  "courseEnrolled": [
+    "CS101"
+  ]
+}
+{
+    "studentId": "987654321",
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "dateOfBirth": "1998-10-20",
+    "gender": "female",
+    "email": "alice.smith@example.com",
+    "contactNumber": "+1987654321",
+    "username": "alicesmith123",
+    "password": "securepassword",
+    "address": "456 Oak St, Townsville",
+    "certificate": "Associate's Degree in Business Administration",
+    "pointsEarned": 350,
+    "courseCart": ["ENG101", "BIO110", "CHEM210"],
+    "courseEnrolled": ["ENG101"]
+  }
+
+  {
+    "studentId": "789012345",
+    "firstName": "Sophia",
+    "lastName": "Wilson",
+    "dateOfBirth": "1999-09-15",
+    "gender": "female",
+    "email": "sophia.wilson@example.com",
+    "contactNumber": "+1987654321",
+    "username": "sophiawilson",
+    "password": "securepass123",
+    "address": "567 Elm St, Springfield",
+    "certificate": "Bachelor's Degree in History",
+    "pointsEarned": 480,
+    "courseCart": ["HIST101", "HIST200"],
+    "courseEnrolled": ["HIST101"]
+  }

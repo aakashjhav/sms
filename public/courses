@@ -1,0 +1,64 @@
+Certainly! Here's an example with course details including course code, course name, category ID, description, course duration, and course fees:
+
+Course: Introduction to Computer Science
+Course Code: CS101
+Course Name: Introduction to Computer Science
+Category ID: COMPSCI
+Description: This course provides an introduction to the fundamental concepts of computer science, including programming, algorithms, data structures, and computational thinking. Students will learn the basics of programming languages and problem-solving techniques.
+Course Duration: 12 weeks
+Course Fees: $500
+
+Course: Calculus I
+Course Code: MATH200
+Course Name: Calculus I
+Category ID: MATH
+Description: Calculus I is the introductory course in calculus, focusing on the fundamental concepts of limits, derivatives, and integrals. Students will learn how to analyze and solve problems involving functions, rates of change, and areas under curves.
+Course Duration: 16 weeks
+Course Fees: $600
+
+Course: English Composition
+Course Code: ENG101
+Course Name: English Composition
+Category ID: ENGLISH
+Description: English Composition is a foundational course in academic writing and communication skills. Students will learn how to write effective essays, develop critical thinking skills, and express their ideas clearly and persuasively through written communication.
+Course Duration: 10 weeks
+Course Fees: $400
+
+Course: Biology for Beginners
+Course Code: BIO110
+Course Name: Biology for Beginners
+Category ID: BIOLOGY
+Description: Biology for Beginners is an introductory course in biology, covering basic principles of cell biology, genetics, evolution, and ecology. Students will explore the diversity of life on Earth and learn about the structure and function of living organisms.
+Course Duration: 14 weeks
+Course Fees: $550
+
+Course: Organic Chemistry
+Course Code: CHEM210
+Course Name: Organic Chemistry
+Category ID: CHEMISTRY
+Description: Organic Chemistry is a course that focuses on the structure, properties, and reactions of organic compounds. Students will study the principles of chemical bonding, stereochemistry, and mechanisms of organic reactions, with an emphasis on understanding the behavior of carbon-based molecules.
+Course Duration: 18 weeks
+Course Fees: $700
+
+Course: Linear Algebra
+Course Code: MATH300
+Course Name: Linear Algebra
+Category ID: MATH
+Description: Linear Algebra is a foundational course in mathematics that focuses on the study of vectors, vector spaces, matrices, and linear transformations. Students will learn about fundamental concepts such as vector addition, scalar multiplication, matrix operations, determinants, eigenvalues, and eigenvectors. Linear Algebra has applications in various fields, including physics, computer science, engineering, and data science.
+Course Duration: 12 weeks
+Course Fees: $550
+
+Course Code: CHEM310
+Course Name: Advanced Organic Chemistry
+Category ID: CHEMISTRY
+Description: Advanced Organic Chemistry builds upon the concepts learned in Organic Chemistry, delving deeper into the mechanisms of organic reactions, synthesis strategies, and spectroscopic analysis techniques. Students will explore advanced topics such as stereochemistry, reaction mechanisms, and the synthesis of complex organic molecules. This course is designed for students interested in pursuing careers in chemistry, biochemistry, pharmaceuticals, or related fields.
+Course Duration: 16 weeks
+Course Fees: $800
+Course: Creative Writing Workshop
+
+Course Code: ENG201
+Course Name: Creative Writing Workshop
+Category ID: ENGLISH
+Description: The Creative Writing Workshop is designed to help students develop their creative writing skills across various genres, including fiction, poetry, drama, and creative nonfiction. Through a series of writing exercises, workshops, and discussions, students will explore different techniques and approaches to writing, experiment with style and form, and receive constructive feedback on their work. This course is suitable for aspiring writers who want to explore and enhance their creative expression through writing.
+Course Duration: 8 weeks
+Course Fees: $350
