@@ -61,6 +61,10 @@ const studentSchema = mongoose.Schema({
   courseEnrolled: {
     type: Array,
   },
+  confirmPassword: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("studentModel", studentSchema);

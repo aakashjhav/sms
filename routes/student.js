@@ -15,7 +15,16 @@ const auth = require("../middleware/auth");
 
 router.post(
   "/api/student/",
-  body("email", "incorrect format").isEmail(),
+  [
+    body("email", "incorrect format").isEmail(),
+    body("firstName", "First Name is required").notEmpty(),
+    body("lastName", "lastName is required").notEmpty(),
+    body("dateOfBirth", "dateOfBirth is required").notEmpty(),
+    body("gender", "gender is required").notEmpty(),
+    body("userName", "userName is required").notEmpty(),
+    body("password", "password is required").notEmpty(),
+    body("confirmPassword", "confirmPassword is required").notEmpty(),
+  ],
 
   async (req, res) => {
     //validate request
@@ -47,6 +56,7 @@ router.post(
       pointsEarned: req.body.pointsEarned,
       courseCart: req.body.courseCart,
       courseEnrolled: req.body.courseEnrolled,
+      confirmPassword: req.body.confirmPassword,
     });
 
     try {

@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
 
   //2. return 400 error if no token
   if (!token) {
-    return res.status(401).json({ msg: "no toke, authorization is denied" });
+    return res.status(401).json({ msg: "no token, authorization is denied" });
   }
 
   //3. verify token
