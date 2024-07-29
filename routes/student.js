@@ -84,7 +84,7 @@ router.post(
 
 //============GET- get all Student==============//
 
-router.get("/api/students/", auth, async (req, res) => {
+router.get("/api/students/", async (req, res) => {
   try {
     const studentSearch = await studentModel.aggregate([
       { $unwind: "$courseEnrolled" },
