@@ -87,7 +87,10 @@ router.post(
 router.get("/api/students/", async (req, res) => {
   try {
     const studentSearch = await studentModel.aggregate([
-      { $unwind: "$courseEnrolled" },
+      // { $unwind: "$courseEnrolled" },
+      {
+        $unwind: { path: "$courseEnrolled", preserveNullAndEmptyArrays: true },
+      },
 
       {
         $lookup: {
@@ -124,13 +127,15 @@ router.get("/api/students/", async (req, res) => {
   }
 });
 
-//============GET- get student by id==============//
+//============GET- get student by username==============//
 
-router.get("/api/student/:studentid", auth, async (req, res) => {
+router.get("/api/student/:userName", auth, async (req, res) => {
   try {
     const studentfind = await studentModel.aggregate([
-      { $match: { studentId: +req.params.studentid } }, // Match the student by studentId
-      { $unwind: "$courseEnrolled" },
+      { $match: { userName: req.params.userName } }, // Match the student by studentId
+      {
+        $unwind: { path: "$courseEnrolled", preserveNullAndEmptyArrays: true },
+      },
       {
         $lookup: {
           from: "coursemodels",
@@ -148,25 +153,36 @@ router.get("/api/student/:studentid", auth, async (req, res) => {
           dateOfBirth: { $first: "$dateOfBirth" },
           gender: { $first: "$gender" },
           email: { $first: "$email" },
-          contactNumber: { $first: "$contactNumber" },
-          userName: { $first: "$userName" },
+          contactNumber: { $first: { $ifNull: ["$contactNumber", ""] } },
           password: { $first: "$password" },
-          address: { $first: "$address" },
-          certificate: { $first: "$certificate" },
-          pointsEarned: { $first: "$pointsEarned" },
-          courseCart: { $first: "$courseCart" },
-          courseEnrolled: { $addToSet: "$courseEnrolled" },
-          courses: { $push: "$courseinfo" },
+          address: { $first: { $ifNull: ["$address", ""] } },
+          certificate: { $first: { $ifNull: ["$certificate", ""] } },
+          pointsEarned: { $first: { $ifNull: ["$pointsEarned", 0] } }, // Provide default value 0 if pointsEarned is null
+          courseCart: { $first: { $ifNull: ["$courseCart", []] } }, // Provide default value [] if courseCart is null
+          courseEnrolled: { $addToSet: { $ifNull: ["$courseEnrolled", []] } }, // Provide default value [] if courseEnrolled is null
+          courses: { $push: { $ifNull: ["$courseinfo", []] } },
         },
       },
     ]);
-    console.log(typeof req.params.studentid);
+
     res.send(studentfind);
   } catch (err) {
     res.send(err);
   }
 });
 
+//============GET- get student when logged in==============//
+
+router.get("/api/student/user", (req, res) => {
+  try {
+    const response = "this is the response";
+    res.send(response);
+    console.log("This is the response:", response);
+  } catch (err) {
+    console.error("This is the error from the server side:", err);
+    res.status(500).send("An error occurred");
+  }
+});
 //================DELETE- Delete all============================//
 
 router.delete("/api/removeallstudents/", auth, async (req, res) => {
@@ -203,7 +219,7 @@ router.post("/api/student/token", async (req, res) => {
         firstName: student.firstName,
       },
       process.env.SECRETKEY,
-      { expiresIn: 36000 }, // in mimiseconds
+      { expiresIn: 36000 }, // in miliseconds
       (err, token) => {
         if (err) {
           return res.status(400).send(err);
